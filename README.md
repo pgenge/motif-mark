@@ -1,6 +1,6 @@
 # motif-mark
 
-motif-mark takes a fasta file and returns a visualization of each gene/intron, exon/cassette, and motif present.
+```motif-mark``` takes a fasta file and returns a visualization of each gene/intron, exon/cassette, and motif present.
 
 To run motif-mark use this command:
 
