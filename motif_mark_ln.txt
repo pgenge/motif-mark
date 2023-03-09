@@ -1,0 +1,71 @@
+pseudocode/brain dump/office hours notes
+
+
+use onelinefasta to make a one line fasta sequence
+then loop through each line and search for a motif sequence that is know from the motifs file
+also take into account ambiguous motifs and take into account IUPAC
+
+create exon, gene, and motif classes
+ex. y = 300, 300 always the same can put it into our class data
+
+functions
+draw using pycairo for each class
+
+Classes:
+exon
+  methods: identify an exon from a fasta sequence, identify a cassette
+motif
+  method: search for motifs and identify and search for ambiguous motifs
+gene
+  identify a gene from a fasta sequence
+
+Fasta sequence line
+Motifs from the motif file--this would interact with the following elements of a transcript
+Cassette (exon that is alternatively spliced)
+Exon
+Intron
+Something for helping to draw pycairo--this would interact with the motif class
+
+exon1  = (start, stop, thickness, color) #can specify the color in 
+motif = (start, stop, thickness, color) #hard to do with motif bc the colors will be different
+gene = (0, 200, 1, black)
+gene = line(0, 200, "gene") # bc it's always gonna be the same
+
+Define object classes objects are nouns-just a template (instructions to build these objects) attributes (features-data), behaviours--method
+easy to find the code, fix the bug, point to it etc.--need a legend
+
+
+
+LAB NOTEBOOK-While coding notes
+
+My oneline fasta doesn't work. CANNOT diagnose the problem--I have no idea why it's only writing out the headers
+Adding IUPAC dictionary to bioinfo module for future use
+
+replacing the motifs with just ambiguous motifs isn't working, it's replacing all of them and my list is too long?? so says Rachel lol
+      OPE my append to the new list was inside the wrong for loop--resolved!
+
+Someone showed me a way to make the relative widths and height but for some reason it doesn't work for how my code is set up, so putting this code chunk
+to have for future reference
+for loop for setting relative width and height won't work--hard coding for now.
+
+#handle file to find longest line and get header to set context of cairo surface
+# linecount = 0
+# longest_seq = 0
+# fasta_id = ""
+
+#set context to be relative to the size of the number of lines in the fasta and the longest line length
+# for line in fa:
+#     linecount += 1
+#     line = line.strip('\n')
+#     #print(line)
+#     if line == "":
+#       break
+#     # elif line.startswith('>'):
+#     #    seq_id = line.strip('\n')
+#     else:
+#        line = line.strip('\n')
+#        if len(line) > longest_seq:
+#           longest_seq = len(line)
+
+
+I do not understand regex at all--but it's working thanks to help from friends!
